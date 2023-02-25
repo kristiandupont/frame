@@ -6,11 +6,11 @@ module.exports = {
 
   extends: [
     "eslint:recommended",
-    "plugin:prettier/recommended", // https://github.com/prettier/eslint-plugin-prettier#recommended-configuration
-    "prettier/prettier",
+    "plugin:prettier/recommended",
+    "plugin:unicorn/recommended",
   ],
 
-  plugins: ["prettier", "simple-import-sort"],
+  plugins: ["prettier", "simple-import-sort", "unicorn"],
 
   env: {
     amd: true,
@@ -32,15 +32,18 @@ module.exports = {
       files: ["*.ts", "*.tsx"],
       parser: "@typescript-eslint/parser",
       plugins: ["@typescript-eslint/eslint-plugin"],
+      extends: ["plugin:@typescript-eslint/recommended"],
       rules: {
+        "no-unused-vars": "off",
+        "no-undef": "off",
         "@typescript-eslint/no-unused-vars": [
           "error",
           { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
         ],
         "@typescript-eslint/prefer-nullish-coalescing": "error",
         "@typescript-eslint/explicit-module-boundary-types": "error",
-        "no-unused-vars": "off",
-        "no-undef": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-explicit-any": "off",
       },
     },
     {
@@ -62,7 +65,6 @@ module.exports = {
   ],
 
   rules: {
-    "prettier/prettier": "error",
     "no-unused-expressions": "error",
     "no-unused-vars": [
       "error",
@@ -82,5 +84,10 @@ module.exports = {
     "simple-import-sort/exports": "error",
     "arrow-body-style": ["error", "as-needed"],
     "prefer-const": "error",
+
+    "unicorn/filename-case": "off",
+    "unicorn/prefer-node-protocol": "off",
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/no-null": "off",
   },
 };
