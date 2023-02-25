@@ -10,7 +10,13 @@ module.exports = {
     "plugin:unicorn/recommended",
   ],
 
-  plugins: ["prettier", "simple-import-sort", "unicorn"],
+  plugins: [
+    "prettier",
+    "simple-import-sort",
+    "unicorn",
+    "ignore-generated",
+    "filenames",
+  ],
 
   env: {
     amd: true,
@@ -84,8 +90,10 @@ module.exports = {
     "simple-import-sort/exports": "error",
     "arrow-body-style": ["error", "as-needed"],
     "prefer-const": "error",
+    "filenames/match-exported": "error",
 
     "unicorn/filename-case": "off",
+    "unicorn/no-array-reduce": "off",
     "unicorn/prefer-node-protocol": "off",
     "unicorn/prevent-abbreviations": "off",
     "unicorn/no-null": "off",
