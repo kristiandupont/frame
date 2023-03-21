@@ -1,6 +1,6 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 2017,
+    ecmaVersion: "latest",
     sourceType: "module",
   },
 
@@ -17,12 +17,6 @@ module.exports = {
     "ignore-generated",
     "filenames",
   ],
-
-  env: {
-    amd: true,
-    node: true,
-    es6: true,
-  },
 
   overrides: [
     {
