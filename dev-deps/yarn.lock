@@ -406,7 +406,7 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@kristiandupont/eslint-config@^1.6.0":
+"@kristiandupont/eslint-config@^1.5.0":
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/@kristiandupont/eslint-config/-/eslint-config-1.6.0.tgz#ac978b2f7a768ef5abd137c9b6700432875c112e"
   integrity sha512-7gjUd4sUmUBHTXlYXfKN+Kgv6UXmAx9fx1DDkHrLdLVzo99ylIPVDz/URazVcDRXVKxvkqwPMO9oWqYG+3m/jQ==
