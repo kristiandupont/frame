@@ -1,0 +1,14 @@
+{
+  "name": "@kristiandupont/prettier-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kristiandupont/frame.git"
+  },
+  "author": "Kristian Dupont <kristian@kristiandupont.com>",
+  "license": "MIT",
+  "scripts": {
+    "deploy": "yarn publish --no-git-tag-version --access public"
+  }
+}

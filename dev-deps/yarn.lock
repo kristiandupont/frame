@@ -423,6 +423,11 @@
     eslint-plugin-unicorn "^46.0.0"
     typescript "5.0.2"
 
+"@kristiandupont/prettier-config@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@kristiandupont/prettier-config/-/prettier-config-1.0.0.tgz#a60e3d6bf4d12e69826ccda2737c4da9621688ec"
+  integrity sha512-mH2n7nqYH/8AGsjxVA0S4T4PaIK5MHqJMxjN9buheTOtCaYqCc4aUjI3A0nKK6OPx0Ff663ax9v5Z40mXz74ow==
+
 "@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1":
   version "5.1.1-v1"
   resolved "https://registry.yarnpkg.com/@nicolo-ribaudo/eslint-scope-5-internals/-/eslint-scope-5-internals-5.1.1-v1.tgz#dbf733a965ca47b1973177dc0bb6c889edcfb129"
