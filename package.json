@@ -6,6 +6,9 @@
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "status": "node ./status.js"
+  },
   "workspaces": [
     "eslint-config",
     "prettier-config",
