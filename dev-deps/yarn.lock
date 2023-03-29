@@ -423,10 +423,12 @@
     eslint-plugin-unicorn "^46.0.0"
     typescript "5.0.2"
 
-"@kristiandupont/prettier-config@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@kristiandupont/prettier-config/-/prettier-config-1.0.0.tgz#a60e3d6bf4d12e69826ccda2737c4da9621688ec"
-  integrity sha512-mH2n7nqYH/8AGsjxVA0S4T4PaIK5MHqJMxjN9buheTOtCaYqCc4aUjI3A0nKK6OPx0Ff663ax9v5Z40mXz74ow==
+"@kristiandupont/prettier-config@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@kristiandupont/prettier-config/-/prettier-config-1.1.0.tgz#933a686be44271f70604b2f69cc47c1fa53ecea9"
+  integrity sha512-ezd3WJV9/XtZCZsnuHiRMOba/MyzfAqv7WnTs2sEkMVP8ubNKrnzaYp0ZNTdaaKpsTwV67US02ZqiwkSnugAQA==
+  dependencies:
+    prettier-plugin-tailwindcss "^0.2.5"
 
 "@nicolo-ribaudo/eslint-scope-5-internals@5.1.1-v1":
   version "5.1.1-v1"
@@ -1771,6 +1773,11 @@ prettier-linter-helpers@^1.0.0:
   integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
   dependencies:
     fast-diff "^1.1.2"
+
+prettier-plugin-tailwindcss@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.2.5.tgz#fb9f07f22d0658fdedbf4d83254bf907656f7500"
+  integrity sha512-vZ/iKieyCx0WTxHbkf5E1rBlv/ybFk8WTT4hL5W2jlVxum2Zbe0jMUpuQdDrpa4z2vnPiJ5KIWCqL/kd16fKYg==
 
 prettier@^2.8.1:
   version "2.8.7"

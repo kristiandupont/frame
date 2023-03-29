@@ -1,6 +1,6 @@
 {
   "name": "@kristiandupont/prettier-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -10,5 +10,8 @@
   "license": "MIT",
   "scripts": {
     "deploy": "yarn publish --no-git-tag-version --access public"
+  },
+  "dependencies": {
+    "prettier-plugin-tailwindcss": "^0.2.5"
   }
 }

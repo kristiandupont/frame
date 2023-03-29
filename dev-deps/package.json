@@ -1,6 +1,6 @@
 {
   "name": "@kristiandupont/dev-deps",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@kristiandupont/eslint-config": "^1.6.0",
-    "@kristiandupont/prettier-config": "^1.0.0",
+    "@kristiandupont/prettier-config": "^1.1.0",
     "eslint": "^8.29.0",
     "prettier": "^2.8.1",
     "typescript": "^5.0.0",
