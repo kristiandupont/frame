@@ -1274,7 +1274,7 @@ supports-preserve-symlinks-flag@^1.0.0:
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
 tailwindcss@^3.2.4:
-  version "3.3.1"
+  version "3.3.2"
   dependencies:
     arg "^5.0.2"
     chokidar "^3.5.3"
