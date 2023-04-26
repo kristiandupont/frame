@@ -50,30 +50,30 @@ async function checkPackage(pkg) {
 
   for (const key of ["added", "removed"]) {
     if (depsDiff[key].length) {
-      console.info(chalk.yellow(`Dependencies ${key}:`));
-      console.info(depsDiff[key].join(", "));
+      console.info(chalk.yellow(` * Dependencies ${key}:`));
+      console.info("  - " + depsDiff[key].join(", "));
     }
     if (devDepsDiff[key].length) {
-      console.info(chalk.yellow(`Dev dependencies ${key}:`));
-      console.info(devDepsDiff[key].join(", "));
+      console.info(chalk.yellow(` * Dev dependencies ${key}:`));
+      console.info("  - " + devDepsDiff[key].join(", "));
     }
   }
 
   if (depsDiff.changed.length) {
-    console.info(chalk.yellow("Dependencies changed:"));
+    console.info(chalk.yellow(" * Dependencies changed:"));
     for (const key of depsDiff.changed) {
       const publishedVersion = published.dependencies[key];
       const localVersion = local.dependencies[key];
-      console.info(`${key}: ${publishedVersion} -> ${localVersion}`);
+      console.info(`  - ${key}: ${publishedVersion} -> ${localVersion}`);
     }
   }
 
   if (devDepsDiff.changed.length) {
-    console.info(chalk.yellow("Devloper dependencies changed:"));
+    console.info(chalk.yellow(" * Devloper dependencies changed:"));
     for (const key of devDepsDiff.changed) {
       const publishedVersion = published.devDependencies[key];
       const localVersion = local.devDependencies[key];
-      console.info(`${key}: ${publishedVersion} -> ${localVersion}`);
+      console.info(`  - ${key}: ${publishedVersion} -> ${localVersion}`);
     }
   }
   console.info();

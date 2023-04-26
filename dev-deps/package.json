@@ -1,6 +1,6 @@
 {
   "name": "@kristiandupont/dev-deps",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
     "deploy": "yarn publish --no-git-tag-version --access public"
   },
   "dependencies": {
-    "@kristiandupont/eslint-config": "^1.7.0",
+    "@kristiandupont/eslint-config": "^1.8.0",
     "@kristiandupont/prettier-config": "^1.1.0",
     "eslint": "^8.29.0",
     "prettier": "^2.8.1",
