@@ -91,5 +91,7 @@ module.exports = {
     "unicorn/prefer-node-protocol": "off",
     "unicorn/prevent-abbreviations": "off",
     "unicorn/no-null": "off",
+    "unicorn/prefer-top-level-await": "off",
+    "unicorn/no-useless-undefined": "off",
   },
 };
