@@ -312,12 +312,12 @@
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
 "@types/react-dom@^18.0.0", "@types/react-dom@^18.0.9":
-  version "18.2.1"
+  version "18.2.3"
   dependencies:
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^18.0.26":
-  version "18.2.0"
+  version "18.2.5"
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
