@@ -14,7 +14,7 @@
   "dependencies": {
     "@kristiandupont/eslint-config": "^2.3.0",
     "@kristiandupont/prettier-config": "^1.2.0",
-    "eslint": "^8.29.0",
+    "eslint": "^8.42.0",
     "prettier": "^2.8.1",
     "typescript": "^5.0.0",
     "vite": "^4.0.1",
