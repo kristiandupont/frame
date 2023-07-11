@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@types/node": "^18.11.15",
-    "nodemon": "^2.0.20",
+    "nodemon": "^3.0.0",
     "ts-node": "^10.9.1"
   }
 }
