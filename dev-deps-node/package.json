@@ -8,9 +8,6 @@
   },
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
-  "scripts": {
-    "deploy": "yarn publish --no-git-tag-version --access public"
-  },
   "dependencies": {
     "@types/node": "^18.11.15",
     "nodemon": "^3.0.0",

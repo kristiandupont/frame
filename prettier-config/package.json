@@ -8,9 +8,6 @@
   },
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
-  "scripts": {
-    "deploy": "yarn publish --no-git-tag-version --access public"
-  },
   "dependencies": {
     "prettier-plugin-tailwindcss": "^0.4.0"
   }

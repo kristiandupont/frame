@@ -8,9 +8,6 @@
   },
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
-  "scripts": {
-    "deploy": "yarn publish --no-git-tag-version --access public"
-  },
   "dependencies": {
     "@babel/core": "^7.18.0",
     "@babel/eslint-parser": "^7.18.2",

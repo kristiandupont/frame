@@ -8,9 +8,6 @@
   },
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
-  "scripts": {
-    "deploy": "yarn publish --no-git-tag-version --access public"
-  },
   "dependencies": {
     "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.26",
