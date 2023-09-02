@@ -1,6 +1,6 @@
 {
   "name": "@kristiandupont/dev-deps",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -9,8 +9,8 @@
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
   "dependencies": {
-    "@kristiandupont/eslint-config": "^2.6.0",
-    "@kristiandupont/prettier-config": "^1.3.0",
+    "@kristiandupont/eslint-config": "^2.7.0",
+    "@kristiandupont/prettier-config": "^1.4.0",
     "@tsconfig/recommended": "^1.0.2",
     "eslint": "^8.42.0",
     "prettier": "^3.0.0",
