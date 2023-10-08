@@ -65,6 +65,7 @@ module.exports = {
   ],
 
   rules: {
+    quotes: "off",
     "no-unused-expressions": "error",
     "no-unused-vars": [
       "error",
