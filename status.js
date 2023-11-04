@@ -21,7 +21,7 @@ const diffObjects = (a = {}, b = {}) => {
   const added = bKeys.filter((key) => !aKeys.includes(key));
   const removed = aKeys.filter((key) => !bKeys.includes(key));
   const changed = aKeys.filter(
-    (key) => a[key] !== b[key] && bKeys.includes(key)
+    (key) => a[key] !== b[key] && bKeys.includes(key),
   );
   const hasChanges = added.length || removed.length || changed.length;
 
@@ -41,7 +41,7 @@ async function checkPackage(pkg) {
   const depsDiff = diffObjects(local.dependencies, published.dependencies);
   const devDepsDiff = diffObjects(
     local.devDependencies,
-    published.devDependencies
+    published.devDependencies,
   );
 
   if (!depsDiff.hasChanges && !devDepsDiff.hasChanges) {
