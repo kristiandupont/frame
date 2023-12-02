@@ -1,6 +1,6 @@
 {
   "name": "@kristiandupont/dev-deps",
-  "version": "2.15.0",
+  "version": "2.16.0",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
   "dependencies": {
-    "@kristiandupont/eslint-config": "^2.13.0",
+    "@kristiandupont/eslint-config": "^2.14.0",
     "@tsconfig/recommended": "^1.0.2",
     "eslint": "^8.42.0",
     "prettier": "^3.0.0",
