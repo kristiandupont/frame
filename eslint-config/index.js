@@ -4,19 +4,9 @@ module.exports = {
     sourceType: "module",
   },
 
-  extends: [
-    "eslint:recommended",
-    "plugin:unicorn/recommended",
-    "plugin:prettier/recommended",
-  ],
+  extends: ["eslint:recommended", "plugin:prettier/recommended"],
 
-  plugins: [
-    "prettier",
-    "simple-import-sort",
-    "unicorn",
-    "ignore-generated",
-    "filenames",
-  ],
+  plugins: ["prettier", "simple-import-sort", "ignore-generated", "filenames"],
 
   overrides: [
     {
@@ -86,13 +76,5 @@ module.exports = {
     "arrow-body-style": ["error", "as-needed"],
     "prefer-const": "error",
     "filenames/match-exported": "error",
-
-    "unicorn/filename-case": "off",
-    "unicorn/no-array-reduce": "off",
-    "unicorn/prefer-node-protocol": "off",
-    "unicorn/prevent-abbreviations": "off",
-    "unicorn/no-null": "off",
-    "unicorn/prefer-top-level-await": "off",
-    "unicorn/no-useless-undefined": "off",
   },
 };
