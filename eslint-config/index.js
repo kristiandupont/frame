@@ -45,11 +45,6 @@ module.exports = {
         "import/no-extraneous-dependencies": "off",
         "import/no-duplicates": "off",
         "no-underscore-dangle": "off",
-        quotes: [
-          1,
-          "single",
-          { avoidEscape: true, allowTemplateLiterals: true },
-        ],
       },
     },
   ],
