@@ -1,6 +1,6 @@
 {
   "name": "@kristiandupont/eslint-config",
-  "version": "2.18.0",
+  "version": "2.20.0",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -29,6 +29,6 @@
     "eslint": ">=8"
   },
   "devDependencies": {
-    "eslint": "8.55.0"
+    "eslint": "8.56.0"
   }
 }
