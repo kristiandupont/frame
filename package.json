@@ -9,13 +9,6 @@
   "scripts": {
     "status": "node ./status.js"
   },
-  "workspaces": [
-    "eslint-config",
-    "prettier-config",
-    "dev-deps",
-    "dev-deps-node",
-    "dev-deps-react"
-  ],
   "dependencies": {
     "chalk": "^5.2.0",
     "pkg.json": "^2.0.8"

@@ -21,7 +21,7 @@ const diffObjects = (a = {}, b = {}) => {
   const added = bKeys.filter((key) => !aKeys.includes(key));
   const removed = aKeys.filter((key) => !bKeys.includes(key));
   const changed = aKeys.filter(
-    (key) => a[key] !== b[key] && bKeys.includes(key),
+    (key) => a[key] !== b[key] && bKeys.includes(key)
   );
   const hasChanges = added.length || removed.length || changed.length;
 
@@ -30,8 +30,13 @@ const diffObjects = (a = {}, b = {}) => {
 
 const pkgJson = promisify(packageJson);
 
-const rootPackageJson = await loadJsonFile("./package.json");
-const packages = rootPackageJson.workspaces;
+const packages = [
+  "eslint-config",
+  "prettier-config",
+  "dev-deps",
+  "dev-deps-node",
+  "dev-deps-react",
+];
 
 async function checkPackage(pkg) {
   console.info(`Checking ${chalk.green(pkg)}`);
@@ -41,7 +46,7 @@ async function checkPackage(pkg) {
   const depsDiff = diffObjects(local.dependencies, published.dependencies);
   const devDepsDiff = diffObjects(
     local.devDependencies,
-    published.devDependencies,
+    published.devDependencies
   );
 
   if (!depsDiff.hasChanges && !devDepsDiff.hasChanges) {
