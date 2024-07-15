@@ -29,6 +29,6 @@
     "eslint": ">=8"
   },
   "devDependencies": {
-    "eslint": "9.6.0"
+    "eslint": "9.7.0"
   }
 }
