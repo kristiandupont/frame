@@ -43,10 +43,10 @@ async function checkPackage(pkg) {
   const local = await loadJsonFile(`${pkg}/package.json`);
   const published = await pkgJson(`@kristiandupont/${pkg}`, "latest");
 
-  const depsDiff = diffObjects(local.dependencies, published.dependencies);
+  const depsDiff = diffObjects(published.dependencies, local.dependencies);
   const devDepsDiff = diffObjects(
-    local.devDependencies,
-    published.devDependencies
+    published.devDependencies,
+    local.devDependencies
   );
 
   if (!depsDiff.hasChanges && !devDepsDiff.hasChanges) {
