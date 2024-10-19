@@ -28,7 +28,11 @@ module.exports = {
         "no-undef": "off",
         "@typescript-eslint/no-unused-vars": [
           "error",
-          { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+          {
+            argsIgnorePattern: "^_",
+            varsIgnorePattern: "^_",
+            caughtErrorsIgnorePattern: "^_",
+          },
         ],
         "@typescript-eslint/prefer-nullish-coalescing": "error",
         "@typescript-eslint/explicit-module-boundary-types": "error",
