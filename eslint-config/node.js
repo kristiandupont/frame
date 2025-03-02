@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ["node"],
-  extends: ["plugin:node/recommended"],
+  plugins: ["n"],
+  extends: ["plugin:n/recommended"],
   rules: {},
 };
