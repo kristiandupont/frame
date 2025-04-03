@@ -9,7 +9,7 @@
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^22.0.0",
-    "tsx": "^4.7.1"
+    "@types/node": "^22.13.16",
+    "tsx": "^4.19.3"
   }
 }
