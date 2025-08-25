@@ -1,6 +1,6 @@
 {
   "name": "@kristiandupont/dev-deps-node",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^22.13.16",
-    "tsx": "^4.19.3"
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.5"
   }
 }
