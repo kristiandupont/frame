@@ -1,6 +1,6 @@
 {
   "name": "@kristiandupont/dev-deps-react",
-  "version": "1.13.0",
+  "version": "1.14.0",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -9,12 +9,12 @@
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
   "dependencies": {
-    "@testing-library/react": "^16.3.0",
-    "@types/react": "^19.2.7",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.1",
-    "autoprefixer": "^10.4.22",
+    "@vitejs/plugin-react": "^5.1.4",
+    "autoprefixer": "^10.4.27",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^4.2.1"
   }
 }
