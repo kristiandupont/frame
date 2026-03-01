@@ -7,7 +7,8 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "status": "node ./status.js"
+    "status": "node ./status.js",
+    "update-deps": "node ./update-deps.js"
   },
   "dependencies": {
     "chalk": "^5.2.0",

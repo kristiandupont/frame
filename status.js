@@ -21,7 +21,7 @@ const diffObjects = (a = {}, b = {}) => {
   const added = bKeys.filter((key) => !aKeys.includes(key));
   const removed = aKeys.filter((key) => !bKeys.includes(key));
   const changed = aKeys.filter(
-    (key) => a[key] !== b[key] && bKeys.includes(key)
+    (key) => a[key] !== b[key] && bKeys.includes(key),
   );
   const hasChanges = added.length || removed.length || changed.length;
 
@@ -32,7 +32,6 @@ const pkgJson = promisify(packageJson);
 
 const packages = [
   "eslint-config",
-  "prettier-config",
   "dev-deps",
   "dev-deps-node",
   "dev-deps-react",
@@ -46,7 +45,7 @@ async function checkPackage(pkg) {
   const depsDiff = diffObjects(published.dependencies, local.dependencies);
   const devDepsDiff = diffObjects(
     published.devDependencies,
-    local.devDependencies
+    local.devDependencies,
   );
 
   if (!depsDiff.hasChanges && !devDepsDiff.hasChanges) {
