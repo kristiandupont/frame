@@ -15,7 +15,7 @@
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
   "dependencies": {
-    "@eslint/js": "^9.0.0",
+    "@eslint/js": "^10.0.0",
     "@kristiandupont/eslint-plugin": "^1.0.0",
     "eslint-plugin-ignore-generated": "^3.1.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
