@@ -1,0 +1,25 @@
+{
+  "name": "@kristiandupont/eslint-plugin",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kristiandupont/frame.git"
+  },
+  "author": "Kristian Dupont <kristian@kristiandupont.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "peerDependencies": {
+    "eslint": ">=9"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^8.59.0",
+    "eslint": "^10.2.1"
+  }
+}
