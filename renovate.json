@@ -1,3 +1,62 @@
 {
-  "extends": ["config:base"]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommits"
+  ],
+  "timezone": "Europe/Copenhagen",
+  "schedule": [
+    "before 6am on monday"
+  ],
+  "dependencyDashboard": true,
+  "prConcurrentLimit": 5,
+  "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "description": "Frame's deps ARE its product, so bumps are releasable changes, not chores. release-please ignores `chore`, which would leave bumps merged but never published.",
+      "matchManagers": [
+        "npm"
+      ],
+      "semanticCommitType": "fix"
+    },
+    {
+      "description": "Non-major tooling updates merge themselves once CI is green. No PR is opened unless something fails.",
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "groupName": "dev tooling",
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "description": "Frame's own internal chain: eslint-plugin -> eslint-config -> dev-deps.",
+      "matchPackageNames": [
+        "@kristiandupont/**"
+      ],
+      "groupName": "internal frame packages",
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "description": "Majors are where configs actually break. This rule is LAST so it overrides the internal-packages rule too \u2014 no major ever automerges, including frame's own.",
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "automerge": false,
+      "addLabels": [
+        "major-upgrade"
+      ],
+      "groupName": null
+    }
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "before 6am on monday"
+    ],
+    "automerge": true
+  }
 }

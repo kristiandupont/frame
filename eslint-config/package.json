@@ -5,12 +5,12 @@
   "main": "index.js",
   "exports": {
     ".": "./index.js",
-    "./react": "./react.js",
     "./node": "./node.js"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:kristiandupont/frame.git"
+    "url": "git+https://github.com/kristiandupont/frame.git",
+    "directory": "eslint-config"
   },
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
@@ -18,10 +18,7 @@
     "@eslint/js": "^9.0.0",
     "@kristiandupont/eslint-plugin": "^1.0.0",
     "eslint-plugin-ignore-generated": "^3.1.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-n": "^17.24.0",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.1",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.0"
   },

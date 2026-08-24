@@ -4,7 +4,8 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:kristiandupont/frame.git"
+    "url": "git+https://github.com/kristiandupont/frame.git",
+    "directory": "dev-deps-node"
   },
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",

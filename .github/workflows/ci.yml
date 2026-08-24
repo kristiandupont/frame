@@ -1,0 +1,95 @@
+name: CI
+
+# Frame's packages are dependency manifests, so "does it install and still work"
+# IS the test suite. Without this, Renovate is free to walk majors forward and
+# nothing ever notices that the result is broken.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: ${{ matrix.package }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - dev-deps
+          - dev-deps-node
+          - dev-deps-react
+          - eslint-config
+          - eslint-plugin
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Deliberately `install` and not `ci`: these packages declare ranges, and
+      # what we want to verify is what a consumer resolving those ranges today
+      # actually gets — including peer-dependency conflicts.
+      - name: Install (resolution check)
+        working-directory: ${{ matrix.package }}
+        run: npm install --no-audit --no-fund
+
+      - name: Unit tests
+        working-directory: ${{ matrix.package }}
+        run: |
+          if node -e "process.exit(require('./package.json').scripts?.test ? 0 : 1)"; then
+            npm test
+          else
+            echo "no test script — skipping"
+          fi
+
+      - name: Config smoke test
+        if: matrix.package == 'eslint-config'
+        working-directory: eslint-config
+        run: node ../scripts/smoke-eslint-config.mjs
+
+  # Resolution inside a package dir is not the same as resolution inside a
+  # consumer. This catches the case where a peer range silently drags a hoisted
+  # dependency to a different major than the one dev-deps declares.
+  consumer:
+    name: consumer install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dev-deps as a consumer would
+        run: |
+          mkdir -p /tmp/consumer && cd /tmp/consumer
+          npm init -y >/dev/null
+          # --install-links is required: without it npm symlinks the local
+          # package and skips its transitive deps entirely, and the assertion
+          # below would pass on an empty tree.
+          npm install --save-dev "$GITHUB_WORKSPACE/dev-deps" --install-links --no-audit --no-fund
+
+      - name: Assert a single, expected ESLint major
+        run: |
+          cd /tmp/consumer
+          declared=$(node -p "require('$GITHUB_WORKSPACE/dev-deps/package.json').dependencies.eslint")
+          hoisted=$(node -p "require('eslint/package.json').version")
+          copies=$(find node_modules -path '*node_modules/eslint/package.json' | wc -l | tr -d ' ')
+          echo "declared: $declared | hoisted: $hoisted | copies in tree: $copies"
+          declared_major=$(echo "$declared" | tr -d '^~>=<' | cut -d. -f1)
+          hoisted_major=$(echo "$hoisted" | cut -d. -f1)
+          if [ "$declared_major" != "$hoisted_major" ]; then
+            echo "::error::dev-deps declares eslint@$declared but consumers resolve $hoisted."
+            echo "::error::A peer range elsewhere in the tree is capping it. Fix the offending peer before publishing."
+            exit 1
+          fi
+          if [ "$copies" -gt 1 ]; then
+            echo "::warning::$copies copies of eslint in the tree — consumers may run a different one than intended."
+          fi

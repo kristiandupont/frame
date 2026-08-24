@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "separate-pull-requests": false,
+  "include-component-in-tag": true,
+  "packages": {
+    "dev-deps":       { "release-type": "node", "package-name": "@kristiandupont/dev-deps" },
+    "dev-deps-node":  { "release-type": "node", "package-name": "@kristiandupont/dev-deps-node" },
+    "dev-deps-react": { "release-type": "node", "package-name": "@kristiandupont/dev-deps-react" },
+    "eslint-config":  { "release-type": "node", "package-name": "@kristiandupont/eslint-config" },
+    "eslint-plugin":  { "release-type": "node", "package-name": "@kristiandupont/eslint-plugin" }
+  },
+  "changelog-sections": [
+    { "type": "feat", "section": "Features" },
+    { "type": "fix",  "section": "Dependency updates" },
+    { "type": "deps", "section": "Dependency updates" }
+  ]
+}
