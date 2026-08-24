@@ -10,7 +10,7 @@
   "author": "Kristian Dupont <kristian@kristiandupont.com>",
   "license": "MIT",
   "dependencies": {
-    "@kristiandupont/eslint-config": "^3.0.0",
+    "@kristiandupont/eslint-config": "^4.0.0",
     "@tsconfig/recommended": "^1.0.13",
     "eslint": "^10.0.2",
     "typescript": "^6.0.3",
