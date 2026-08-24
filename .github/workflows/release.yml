@@ -1,0 +1,70 @@
+name: Release
+
+# One release PR collects a week of merged bumps across all five packages.
+# Merging it tags, publishes, and writes changelogs — the manual
+# "Bump bump bump" + npm publish x5 goes away.
+#
+# Publishing stays behind a human merge on purpose: this repo sits upstream of
+# every other project, so the one click that matters is kept.
+#
+# Auth is npm trusted publishing (OIDC) — no NPM_TOKEN. npm mints a short-lived
+# credential from the GitHub OIDC token and checks it against the trusted
+# publisher rule configured per package on npmjs.com. Each of the five packages
+# needs its own rule pointing at: kristiandupont / frame / release.yml
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    outputs:
+      paths_released: ${{ steps.release.outputs.paths_released }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  publish:
+    needs: release-please
+    if: needs.release-please.outputs.paths_released != '[]' && needs.release-please.outputs.paths_released != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # required: lets the job mint the OIDC token
+    strategy:
+      fail-fast: false
+      matrix:
+        path: ${{ fromJSON(needs.release-please.outputs.paths_released) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Node 24, not 22: trusted publishing needs npm >= 11.5.1 and Node 22
+          # still bundles npm 10.9.x, which fails with a plain auth error.
+          node-version: 24
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Ensure npm supports trusted publishing
+        run: |
+          npm install -g npm@latest
+          echo "npm $(npm -v) (needs >= 11.5.1)"
+
+      - name: Install
+        working-directory: ${{ matrix.path }}
+        run: npm install --no-audit --no-fund
+
+      # No --provenance flag and no NODE_AUTH_TOKEN: trusted publishing
+      # generates provenance attestations automatically.
+      - name: Publish ${{ matrix.path }}
+        working-directory: ${{ matrix.path }}
+        run: npm publish --access public
