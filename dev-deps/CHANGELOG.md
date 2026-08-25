@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/kristiandupont/frame/compare/dev-deps-v3.0.1...dev-deps-v4.0.0) (2026-08-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* the bundled eslint-config no longer provides React rules. React projects should configure eslint-plugin-react, eslint-plugin-react-hooks and eslint-plugin-jsx-a11y directly.
+
+### Features
+
+* point dev-deps at eslint-config 4 ([055f915](https://github.com/kristiandupont/frame/commit/055f91569ff5b882505fe2a96d9b0938e4c32a08))
+
 ## [3.0.1](https://github.com/kristiandupont/frame/compare/dev-deps-v3.0.0...dev-deps-v3.0.1) (2026-08-24)
 
 
