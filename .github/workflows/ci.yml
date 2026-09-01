@@ -32,7 +32,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 22.23.2
 
       # Deliberately `install` and not `ci`: these packages declare ranges, and
       # what we want to verify is what a consumer resolving those ranges today
@@ -65,7 +65,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 22.23.2
 
       - name: Install dev-deps as a consumer would
         run: |
