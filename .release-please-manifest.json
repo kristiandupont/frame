@@ -1,7 +1,7 @@
 {
-  "dev-deps": "4.0.0",
-  "dev-deps-node": "1.9.1",
-  "dev-deps-react": "1.14.1",
-  "eslint-config": "4.0.0",
-  "eslint-plugin": "1.0.1"
+  "dev-deps": "4.0.1",
+  "dev-deps-node": "1.9.2",
+  "dev-deps-react": "1.14.2",
+  "eslint-config": "4.0.1",
+  "eslint-plugin": "1.0.2"
 }
