@@ -51,7 +51,7 @@ jobs:
         with:
           # Node 24, not 22: trusted publishing needs npm >= 11.5.1 and Node 22
           # still bundles npm 10.9.x, which fails with a plain auth error.
-          node-version: 24
+          node-version: 24.20.0
           registry-url: "https://registry.npmjs.org"
 
       - name: Ensure npm supports trusted publishing
