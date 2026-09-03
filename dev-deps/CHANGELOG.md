@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.0.1](https://github.com/kristiandupont/frame/compare/dev-deps-v4.0.0...dev-deps-v4.0.1) (2026-09-03)
+
+
+### Dependency updates
+
+* **deps:** update dev tooling ([#435](https://github.com/kristiandupont/frame/issues/435)) ([ac5fbac](https://github.com/kristiandupont/frame/commit/ac5fbacfbc9dd2044ff1501773854234e7135350))
+
 ## [4.0.0](https://github.com/kristiandupont/frame/compare/dev-deps-v3.0.1...dev-deps-v4.0.0) (2026-08-25)
 
 
