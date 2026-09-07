@@ -45,7 +45,7 @@ jobs:
       matrix:
         path: ${{ fromJSON(needs.release-please.outputs.paths_released) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v4
         with:
