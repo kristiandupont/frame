@@ -58,6 +58,9 @@ jobs:
   # Resolution inside a package dir is not the same as resolution inside a
   # consumer. This catches the case where a peer range silently drags a hoisted
   # dependency to a different major than the one dev-deps declares.
+  #
+  # The assertion tracked eslint until dev-deps stopped shipping it; vite is now
+  # the dependency consumers actually resolve through this package.
   consumer:
     name: consumer install
     runs-on: ubuntu-latest
@@ -76,20 +79,20 @@ jobs:
           # below would pass on an empty tree.
           npm install --save-dev "$GITHUB_WORKSPACE/dev-deps" --install-links --no-audit --no-fund
 
-      - name: Assert a single, expected ESLint major
+      - name: Assert a single, expected Vite major
         run: |
           cd /tmp/consumer
-          declared=$(node -p "require('$GITHUB_WORKSPACE/dev-deps/package.json').dependencies.eslint")
-          hoisted=$(node -p "require('eslint/package.json').version")
-          copies=$(find node_modules -path '*node_modules/eslint/package.json' | wc -l | tr -d ' ')
+          declared=$(node -p "require('$GITHUB_WORKSPACE/dev-deps/package.json').dependencies.vite")
+          hoisted=$(node -p "require('vite/package.json').version")
+          copies=$(find node_modules -path '*node_modules/vite/package.json' | wc -l | tr -d ' ')
           echo "declared: $declared | hoisted: $hoisted | copies in tree: $copies"
           declared_major=$(echo "$declared" | tr -d '^~>=<' | cut -d. -f1)
           hoisted_major=$(echo "$hoisted" | cut -d. -f1)
           if [ "$declared_major" != "$hoisted_major" ]; then
-            echo "::error::dev-deps declares eslint@$declared but consumers resolve $hoisted."
+            echo "::error::dev-deps declares vite@$declared but consumers resolve $hoisted."
             echo "::error::A peer range elsewhere in the tree is capping it. Fix the offending peer before publishing."
             exit 1
           fi
           if [ "$copies" -gt 1 ]; then
-            echo "::warning::$copies copies of eslint in the tree — consumers may run a different one than intended."
+            echo "::warning::$copies copies of vite in the tree — consumers may run a different one than intended."
           fi
